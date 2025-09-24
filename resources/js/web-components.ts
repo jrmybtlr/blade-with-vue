@@ -5,7 +5,6 @@ import MotionFrame from './components/web-components/MotionFrame.ce.vue';
 import MotionGestures from './components/web-components/MotionGestures.ce.vue';
 import MotionSpring from './components/web-components/MotionSpring.ce.vue';
 
-// Component configuration for easy management
 const componentConfig = [
   {
     name: 'motion-counter',

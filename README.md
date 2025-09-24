@@ -23,35 +23,32 @@ Visit `http://localhost:8000/` to see the animated components in action.
 
 The project uses Vite to build Vue components as custom elements:
 
-1. **Vue Components** (`.ce.vue`) are compiled as custom elements
-2. **Web Components Entry** (`web-components.js`) registers custom elements
-3. **Main App** (`app.js`) imports web components for global availability
+1. **Vue Components** (`.ce.vue`) are compiled as custom elements with TypeScript support
+2. **Web Components Entry** (`web-components.ts`) registers custom elements using a configuration array
+3. **Main App** (`app.ts`) imports web components for global availability
 4. **Blade Templates** use custom elements as regular HTML tags
 
 ### Key Features
 
--   ✅ **Native Web Components** - No framework dependencies in templates
--   ✅ **Motion Animations** - Smooth, performant animations using Motion for Vue
--   ✅ **Tailwind Styling** - Consistent design system
--   ✅ **TypeScript Ready** - Full type support
--   ✅ **Accessibility** - Proper ARIA attributes and keyboard navigation
--   ✅ **Responsive** - Mobile-friendly animations
+- ✅ **Native Web Components** - No framework dependencies in templates
+- ✅ **Motion Animations** - Smooth, performant animations using Motion for Vue
+- ✅ **Tailwind Styling** - Consistent design system
+- ✅ **TypeScript Ready** - Full type support
+- ✅ **Accessibility** - Proper ARIA attributes and keyboard navigation
+- ✅ **Responsive** - Mobile-friendly animations
+- ✅ **Performance** - Web components are native and performant
+- ✅ **Reusability** - Components work across multiple Blade templates
+- ✅ **Maintainability** - Clear separation of animation logic
+- ✅ **Flexibility** - Easy to add new animated components
+- ✅ **SEO-Friendly** - Maintains server-side rendering benefits
 
-## 🎯 Benefits
-
-1. **Performance** - Web components are native and performant
-2. **Reusability** - Components work across multiple Blade templates
-3. **Maintainability** - Clear separation of animation logic
-4. **Flexibility** - Easy to add new animated components
-5. **SEO-Friendly** - Maintains server-side rendering benefits
-
-## 🔧 Development
+## Development
 
 ### Adding New Components
 
 1. Create a new `.ce.vue` file in `resources/js/components/web-components/`
-2. Export the component in `web-components.js`
-3. Register the custom element
+2. Add the component to the `componentConfig` array in `web-components.ts`
+3. The custom element will be automatically registered
 4. Use in Blade templates
 
 ### Example New Component
@@ -64,22 +61,23 @@ The project uses Vite to build Vue components as custom elements:
     </motion.div>
 </template>
 
-<script>
+<script setup lang="ts">
 import { motion } from "motion-v";
-
-export default {
-    name: "MyNewComponent",
-    components: { motion },
-};
 </script>
 ```
 
-```javascript
-// web-components.js
+```typescript
+// web-components.ts
 import MyNewComponent from "./components/web-components/MyNewComponent.ce.vue";
 
-const MyNewComponentElement = defineCustomElement(MyNewComponent);
-customElements.define("my-new-component", MyNewComponentElement);
+const componentConfig = [
+    // ... existing components
+    {
+        name: "my-new-component",
+        component: MyNewComponent,
+        element: "my-new-component",
+    },
+];
 ```
 
 ```blade
@@ -87,7 +85,7 @@ customElements.define("my-new-component", MyNewComponentElement);
 <my-new-component>Hello World!</my-new-component>
 ```
 
-## 🚀 Production Build
+## Production Build
 
 ```bash
 npm run build
@@ -95,9 +93,9 @@ npm run build
 
 This creates optimized bundles in the `public/build/` directory.
 
-## 📚 Resources
+## Links
 
--   [Motion for Vue Documentation](https://motion.dev/docs/vue)
--   [Vue Custom Elements Guide](https://vuejs.org/guide/extras/web-components.html)
--   [Laravel Vite Plugin](https://laravel.com/docs/11.x/vite)
--   [Tailwind CSS](https://tailwindcss.com/)
+- [Motion for Vue Documentation](https://motion.dev/docs/vue)
+- [Vue Custom Elements Guide](https://vuejs.org/guide/extras/web-components.html)
+- [Laravel Vite Plugin](https://laravel.com/docs/11.x/vite)
+- [Tailwind CSS](https://tailwindcss.com/)
