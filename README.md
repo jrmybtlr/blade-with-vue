@@ -1,61 +1,195 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Animated Web Components for Laravel Blade
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project demonstrates how to integrate Motion for Vue animations into Laravel Blade templates using Vue web components (custom elements).
 
-## About Laravel
+## 🚀 Quick Start
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 1. Development Setup
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```bash
+# Install dependencies
+npm install
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Start development servers
+npm run dev          # Vite dev server
+php artisan serve    # Laravel dev server
+```
 
-## Learning Laravel
+### 2. View the Demo
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Visit `http://localhost:8000/animated-demo` to see the animated components in action.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🎨 Available Components
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### AnimatedButton
 
-## Laravel Sponsors
+A fully animated button component with multiple variants, sizes, and animation types.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+#### Usage in Blade Templates
 
-### Premium Partners
+```blade
+<!-- Basic usage -->
+<animated-button variant="primary">Click me!</animated-button>
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+<!-- With different variants -->
+<animated-button variant="secondary">Secondary</animated-button>
+<animated-button variant="outline">Outline</animated-button>
+<animated-button variant="ghost">Ghost</animated-button>
+<animated-button variant="danger">Danger</animated-button>
 
-## Contributing
+<!-- Different sizes -->
+<animated-button size="sm">Small</animated-button>
+<animated-button size="md">Medium</animated-button>
+<animated-button size="lg">Large</animated-button>
+<animated-button size="xl">Extra Large</animated-button>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<!-- Different animation types -->
+<animated-button animation-type="scale">Scale Animation</animated-button>
+<animated-button animation-type="bounce">Bounce Animation</animated-button>
+<animated-button animation-type="slide">Slide Animation</animated-button>
+<animated-button animation-type="fade">Fade Animation</animated-button>
 
-## Code of Conduct
+<!-- Interactive states -->
+<animated-button loading="true">Loading...</animated-button>
+<animated-button disabled="true">Disabled</animated-button>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<!-- With click handlers -->
+<animated-button onclick="alert('Hello!')">Click me!</animated-button>
+```
 
-## Security Vulnerabilities
+#### Props
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+| Prop             | Type    | Default     | Description                     |
+| ---------------- | ------- | ----------- | ------------------------------- |
+| `variant`        | String  | `'primary'` | Button style variant            |
+| `size`           | String  | `'md'`      | Button size                     |
+| `disabled`       | Boolean | `false`     | Disable the button              |
+| `loading`        | Boolean | `false`     | Show loading spinner            |
+| `type`           | String  | `'button'`  | HTML button type                |
+| `animation-type` | String  | `'scale'`   | Animation type for interactions |
 
-## License
+#### Variants
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-   `primary` - Blue background with white text
+-   `secondary` - Gray background with white text
+-   `outline` - Blue border with blue text
+-   `ghost` - Transparent with blue text
+-   `danger` - Red background with white text
+
+#### Sizes
+
+-   `sm` - Small button
+-   `md` - Medium button (default)
+-   `lg` - Large button
+-   `xl` - Extra large button
+
+#### Animation Types
+
+-   `scale` - Scale up/down on hover/press
+-   `bounce` - Bounce effect on hover
+-   `slide` - Slide horizontally on hover
+-   `fade` - Fade opacity on hover
+
+## 🏗️ Architecture
+
+### File Structure
+
+```
+resources/
+├── js/
+│   ├── components/
+│   │   └── web-components/
+│   │       ├── AnimatedButton.ce.vue
+│   │       └── index.js
+│   ├── web-components.js
+│   └── app.js
+├── views/
+│   └── examples/
+│       └── animated-components.blade.php
+└── css/
+    └── app.css
+```
+
+### Build Process
+
+The project uses Vite to build Vue components as custom elements:
+
+1. **Vue Components** (`.ce.vue`) are compiled as custom elements
+2. **Web Components Entry** (`web-components.js`) registers custom elements
+3. **Main App** (`app.js`) imports web components for global availability
+4. **Blade Templates** use custom elements as regular HTML tags
+
+### Key Features
+
+-   ✅ **Native Web Components** - No framework dependencies in templates
+-   ✅ **Motion Animations** - Smooth, performant animations using Motion for Vue
+-   ✅ **Tailwind Styling** - Consistent design system
+-   ✅ **TypeScript Ready** - Full type support
+-   ✅ **Accessibility** - Proper ARIA attributes and keyboard navigation
+-   ✅ **Responsive** - Mobile-friendly animations
+-   ✅ **Dark Mode** - Built-in dark mode support
+
+## 🎯 Benefits
+
+1. **Performance** - Web components are native and performant
+2. **Reusability** - Components work across multiple Blade templates
+3. **Maintainability** - Clear separation of animation logic
+4. **Flexibility** - Easy to add new animated components
+5. **SEO-Friendly** - Maintains server-side rendering benefits
+
+## 🔧 Development
+
+### Adding New Components
+
+1. Create a new `.ce.vue` file in `resources/js/components/web-components/`
+2. Export the component in `web-components.js`
+3. Register the custom element
+4. Use in Blade templates
+
+### Example New Component
+
+```vue
+<!-- MyNewComponent.ce.vue -->
+<template>
+    <motion.div :animate="{ opacity: 1 }">
+        <slot />
+    </motion.div>
+</template>
+
+<script>
+import { motion } from "motion-v";
+
+export default {
+    name: "MyNewComponent",
+    components: { motion },
+};
+</script>
+```
+
+```javascript
+// web-components.js
+import MyNewComponent from "./components/web-components/MyNewComponent.ce.vue";
+
+const MyNewComponentElement = defineCustomElement(MyNewComponent);
+customElements.define("my-new-component", MyNewComponentElement);
+```
+
+```blade
+<!-- In Blade template -->
+<my-new-component>Hello World!</my-new-component>
+```
+
+## 🚀 Production Build
+
+```bash
+npm run build
+```
+
+This creates optimized bundles in the `public/build/` directory.
+
+## 📚 Resources
+
+-   [Motion for Vue Documentation](https://motion.dev/docs/vue)
+-   [Vue Custom Elements Guide](https://vuejs.org/guide/extras/web-components.html)
+-   [Laravel Vite Plugin](https://laravel.com/docs/11.x/vite)
+-   [Tailwind CSS](https://tailwindcss.com/)
