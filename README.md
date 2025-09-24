@@ -17,98 +17,7 @@ php artisan serve    # Laravel dev server
 
 ### 2. View the Demo
 
-Visit `http://localhost:8000/animated-demo` to see the animated components in action.
-
-## 🎨 Available Components
-
-### AnimatedButton
-
-A fully animated button component with multiple variants, sizes, and animation types.
-
-#### Usage in Blade Templates
-
-```blade
-<!-- Basic usage -->
-<animated-button variant="primary">Click me!</animated-button>
-
-<!-- With different variants -->
-<animated-button variant="secondary">Secondary</animated-button>
-<animated-button variant="outline">Outline</animated-button>
-<animated-button variant="ghost">Ghost</animated-button>
-<animated-button variant="danger">Danger</animated-button>
-
-<!-- Different sizes -->
-<animated-button size="sm">Small</animated-button>
-<animated-button size="md">Medium</animated-button>
-<animated-button size="lg">Large</animated-button>
-<animated-button size="xl">Extra Large</animated-button>
-
-<!-- Different animation types -->
-<animated-button animation-type="scale">Scale Animation</animated-button>
-<animated-button animation-type="bounce">Bounce Animation</animated-button>
-<animated-button animation-type="slide">Slide Animation</animated-button>
-<animated-button animation-type="fade">Fade Animation</animated-button>
-
-<!-- Interactive states -->
-<animated-button loading="true">Loading...</animated-button>
-<animated-button disabled="true">Disabled</animated-button>
-
-<!-- With click handlers -->
-<animated-button onclick="alert('Hello!')">Click me!</animated-button>
-```
-
-#### Props
-
-| Prop             | Type    | Default     | Description                     |
-| ---------------- | ------- | ----------- | ------------------------------- |
-| `variant`        | String  | `'primary'` | Button style variant            |
-| `size`           | String  | `'md'`      | Button size                     |
-| `disabled`       | Boolean | `false`     | Disable the button              |
-| `loading`        | Boolean | `false`     | Show loading spinner            |
-| `type`           | String  | `'button'`  | HTML button type                |
-| `animation-type` | String  | `'scale'`   | Animation type for interactions |
-
-#### Variants
-
--   `primary` - Blue background with white text
--   `secondary` - Gray background with white text
--   `outline` - Blue border with blue text
--   `ghost` - Transparent with blue text
--   `danger` - Red background with white text
-
-#### Sizes
-
--   `sm` - Small button
--   `md` - Medium button (default)
--   `lg` - Large button
--   `xl` - Extra large button
-
-#### Animation Types
-
--   `scale` - Scale up/down on hover/press
--   `bounce` - Bounce effect on hover
--   `slide` - Slide horizontally on hover
--   `fade` - Fade opacity on hover
-
-## 🏗️ Architecture
-
-### File Structure
-
-```
-resources/
-├── js/
-│   ├── components/
-│   │   └── web-components/
-│   │       ├── AnimatedButton.ce.vue
-│   │       └── index.js
-│   ├── web-components.js
-│   └── app.js
-├── views/
-│   └── examples/
-│       └── animated-components.blade.php
-└── css/
-    └── app.css
-```
+Visit `http://localhost:8000/` to see the animated components in action.
 
 ### Build Process
 
@@ -127,7 +36,6 @@ The project uses Vite to build Vue components as custom elements:
 -   ✅ **TypeScript Ready** - Full type support
 -   ✅ **Accessibility** - Proper ARIA attributes and keyboard navigation
 -   ✅ **Responsive** - Mobile-friendly animations
--   ✅ **Dark Mode** - Built-in dark mode support
 
 ## 🎯 Benefits
 
