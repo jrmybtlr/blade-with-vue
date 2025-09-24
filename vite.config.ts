@@ -34,7 +34,8 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 app: 'resources/js/app.ts',
-                webComponents: 'resources/js/web-components.ts'
+                webComponents: 'resources/js/web-components.ts',
+                css: 'resources/css/app.css'
             },
             output: {
                 entryFileNames: (chunkInfo) => {
@@ -43,7 +44,7 @@ export default defineConfig({
                 chunkFileNames: 'web-components/[name].js',
                 assetFileNames: (assetInfo) => {
                     if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-                        return 'web-components/[name].[ext]';
+                        return '[name].[ext]';
                     }
                     return '[name].[ext]';
                 }

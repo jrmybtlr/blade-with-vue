@@ -7,7 +7,7 @@
   <title>Animated Components - {{ config('app.name', 'Laravel') }}</title>
 
   <!-- Styles / Scripts -->
-  @vite(['resources/css/app.css', 'resources/js/app.ts'])
+  @vite(['resources/css/app.css', 'resources/js/app.ts', 'resources/js/web-components.ts'])
 </head>
 
 <body class="bg-neutral-900 min-h-screen">
