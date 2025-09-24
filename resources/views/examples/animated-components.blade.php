@@ -31,16 +31,16 @@
         <motion-spring />
       </x-motion-section>
 
-      <x-motion-section title="Drag Element">
-        <motion-drag />
-      </x-motion-section>
-
       <x-motion-section title="Gestures">
         <motion-gestures />
       </x-motion-section>
 
       <x-motion-section title="Frame">
         <motion-frame />
+      </x-motion-section>
+
+      <x-motion-section title="Bounce">
+        <motion-bounce />
       </x-motion-section>
     </div>
 

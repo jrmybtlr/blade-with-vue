@@ -4,6 +4,7 @@ import MotionDrag from './components/web-components/MotionDrag.ce.vue';
 import MotionFrame from './components/web-components/MotionFrame.ce.vue';
 import MotionGestures from './components/web-components/MotionGestures.ce.vue';
 import MotionSpring from './components/web-components/MotionSpring.ce.vue';
+import MotionBounce from './components/web-components/MotionBounce.ce.vue';
 
 const componentConfig = [
   {
@@ -14,7 +15,7 @@ const componentConfig = [
   {
     name: 'motion-drag',
     component: MotionDrag,
-    element: 'drag-element'
+    element: 'motion-drag'
   },
   {
     name: 'motion-gestures',
@@ -30,6 +31,11 @@ const componentConfig = [
     name: 'motion-frame',
     component: MotionFrame,
     element: 'motion-frame'
+  },
+  {
+    name: 'motion-bounce',
+    component: MotionBounce,
+    element: 'motion-bounce'
   }
 ];
 
@@ -48,15 +54,16 @@ export const MotionDragElement = customElements.find(ce => ce.name === 'motion-d
 export const MotionGesturesElement = customElements.find(ce => ce.name === 'motion-gestures')?.customElement;
 export const MotionSpringElement = customElements.find(ce => ce.name === 'motion-spring')?.customElement;
 export const MotionFrameElement = customElements.find(ce => ce.name === 'motion-frame')?.customElement;
-
+export const MotionBounceElement = customElements.find(ce => ce.name === 'motion-bounce')?.customElement;
 declare global {
   namespace JSX {
     interface IntrinsicElements {
       'motion-counter': any;
-      'drag-element': any;
+      'motion-drag': any;
       'motion-gestures': any;
       'motion-spring': any; 
       'motion-frame': any;
+      'motion-bounce': any;
     }
   }
 }
