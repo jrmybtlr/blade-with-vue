@@ -23,16 +23,24 @@
 
     <div class="max-w-4xl mx-auto space-y-12">
 
-      <x-motion-section title="Counter Component" subtitle="An interactive counter with smooth animations">
+      <x-motion-section title="Counter Component">
         <motion-counter />
       </x-motion-section>
 
-      <x-motion-section title="CSS Spring Animation" subtitle="Physics-based spring animations using CSS">
-        <css-spring />
+      <x-motion-section title="CSS Spring Animation">
+        <motion-spring />
       </x-motion-section>
 
-      <x-motion-section title="Drag Element" subtitle="Draggable element with motion feedback">
-        <drag-element />
+      <x-motion-section title="Drag Element">
+        <motion-drag />
+      </x-motion-section>
+
+      <x-motion-section title="Gestures">
+        <motion-gestures />
+      </x-motion-section>
+
+      <x-motion-section title="Frame">
+        <motion-frame />
       </x-motion-section>
     </div>
 

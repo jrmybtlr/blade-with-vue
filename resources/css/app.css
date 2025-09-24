@@ -10,3 +10,13 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Motion Frame CSS Variables */
+:root {
+    --hue-1-transparent: rgba(255, 0, 0, 0.6);
+    --hue-2-transparent: rgba(0, 255, 0, 0.6);
+    --hue-3-transparent: rgba(0, 0, 255, 0.6);
+    --hue-4-transparent: rgba(255, 255, 0, 0.6);
+    --hue-5-transparent: rgba(255, 0, 255, 0.6);
+    --hue-6-transparent: rgba(0, 255, 255, 0.6);
+}
